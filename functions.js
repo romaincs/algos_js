@@ -1,24 +1,24 @@
 function sum_items(items) {
 
-    if(isNaN(items) || items < 0)
+    if (isNaN(items) || items < 0)
         throw 'Input must be a positive integer value'
-    
+
     let return_value = 0
     for (var i = 0; i < items.toString().length; i++) {
         return_value += parseInt(items.toString().charAt(i))
     }
 
-    if(return_value >= 10)
+    if (return_value >= 10)
         return sum_items(return_value)
-    else 
+    else
         return return_value
 }
 
 function reverse_string(input) {
     let output = '',
-        i = input.length-1
-    
-    while(i >= 0) {
+        i = input.length - 1
+
+    while (i >= 0) {
         output += input.charAt(i)
         i--
     }
@@ -36,7 +36,7 @@ function truncateString(str, num) {
 
 function repeatStringNumTimes(str, num) {
     let output = ''
-    while(num > 0) {
+    while (num > 0) {
         output = output + str
         num--
     }
@@ -50,32 +50,53 @@ function confirmEnding(str, target) {
 function largestOfFour(arr) {
     return arr.map(
         (e) => e.sort(
-            (a,b) => b - a
+            (a, b) => b - a
         )[0]
     )
 }
 
 function booWho(bool) {
-    return typeof(bool) == 'boolean';
+    return typeof (bool) == 'boolean';
 }
 
 function titleCase(str) {
     return str.toLowerCase()
-              .split(' ')
-              .map(a => a[0].toUpperCase() + a.slice(1))
-              .join(' ');
+        .split(' ')
+        .map(a => a[0].toUpperCase() + a.slice(1))
+        .join(' ');
 }
 
 function frankenSplice(arr1, arr2, n) {
-    return [...arr2.slice(0, n), 
-            ...arr1, 
-            ...arr2.slice(n)];
-}  
+    return [...arr2.slice(0, n),
+        ...arr1,
+        ...arr2.slice(n)
+    ];
+}
 
 function bouncer(arr) {
     return arr.filter(a => a);
 }
-  
-  
 
-export default {sum_items, reverse_string}
+function mutation(arr) {
+    return [...arr[1].toLowerCase()]
+        .every(c => [...arr[0].toLowerCase()].indexOf(c) > -1)
+}
+
+function chunkArrayInGroups(arr, size) {
+    let arrGroups = []
+    for (let cpt = 0; cpt < arr.length; cpt = cpt + size) {
+        arrGroups.push(arr.slice(cpt, cpt + size))
+    }
+    return arrGroups
+}
+
+function getIndexToIns(arr, num) {
+    arr.push(num)
+    arr.sort((a, b) => a - b)
+    return arr.indexOf(num)
+}
+
+export default {
+    sum_items,
+    reverse_string
+}
