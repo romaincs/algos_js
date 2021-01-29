@@ -1,4 +1,5 @@
-import functions from './functions.js'
+import { basicFunctions } from './basic_alogirthm_scripting'
+import { intermediateFunctions } from './intermediate_algorithm_scripting'
 import interfaces from './interfaces.js'
 
 let calculateButton = document.getElementById('calculate')
@@ -16,4 +17,6 @@ calculateButton.addEventListener('click', () => {
     interfaces.set_result(sumDigit)
 })
 
-console.log(functions.reverse_string("hello"))
+console.log(basicFunctions.reverse_string("hello world"))
+
+console.log(intermediateFunctions.spinalCaseSplit("HelloWorld"))
