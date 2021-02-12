@@ -4,15 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "es-dev-server --app-index index.html --node-resolve --watch --open"
+    "start": "es-dev-server --app-index index.html --node-resolve --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "es-dev-server": "^1.60.1"
   },
-  "dependencies": {
-    "jquery": "^3.5.1",
-    "underscore": "^1.12.0"
-  }
+  "dependencies": {}
 }
